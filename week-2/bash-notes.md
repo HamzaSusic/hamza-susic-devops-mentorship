@@ -103,4 +103,4 @@ wget link-paketa -
 
 cd /etc/yum.repos.d/ - artifaktori repositoriji su konfigurisani ovdje
 
-sudo yum install ime-paketa -y -da odobri install bez pitanja!
+sudo yum install ime-paketa -y -da odobri install bez pitanja
