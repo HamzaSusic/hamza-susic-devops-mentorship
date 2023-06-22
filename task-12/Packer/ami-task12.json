@@ -1,0 +1,29 @@
+{
+    "builders": [{
+      "type": "amazon-ebs",
+      "region": "eu-central-1",
+      "profile": "HamzaSusic",
+      "source_ami": "ami-0b2ac948e23c57071",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "temporary_key_pair_type": "ed25519",
+      "ami_name": "packer-mentorship-task12 {{timestamp}}",
+      "tags": {
+        "Name": "task-12-web-server-cf",
+        "CreatedBy": "hamza-susic",
+        "Project": "task-12",
+        "IaC": "Packer"
+      }
+
+    }],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "./shell-scripts/nginx.sh"  
+        }, 
+        {
+          "type": "shell",
+          "script": "./shell-scripts/mysql.sh"  
+      }
+    ]
+}
